@@ -100,18 +100,68 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
+              
                 ),
-              ],
-            ),
-children[ TextField(
-        decoration: InputDecoration(
-hintText: "Enter Name",contentPadding: EdgeInsets.all(10)),
-),
-],
-          ),
-        ],
+                  Column(
+            children: [
+              SizedBox(height: 25, width: 50,),
+          TextField(
+      decoration: InputDecoration(
+        hintText: "Enter Name",
+        contentPadding: EdgeInsets.all(10),
+        fillColor: Colors.white, // Set the background color here
+      filled: true, 
+        
+        focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.orange), // Border color when focused
       ),
-      
+           enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.white), 
+        )
+      ),
+      style: TextStyle(
+      color: Colors.orange, // Set the font color here
+    ),
+    
+    ),
+
+
+         SizedBox(height: 25, width: 50,),
+          TextField(
+      decoration: InputDecoration(
+        hintText: "Enter father Name",
+        contentPadding: EdgeInsets.all(10),
+        fillColor: Colors.white, // Set the background color here
+      filled: true, 
+        
+        focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.orange), // Border color when focused
+      ),
+           enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.white), 
+        )
+      ),
+      style: TextStyle(
+      color: Colors.orange, // Set the font color here
+    ),
+    
+    ),
+    ]
+  ),
+              ],
+              
+            ),
+
+          ),
+        
+        ],
+        
+      ),
+     
+  
+ 
+
+
     );
   }
 }
