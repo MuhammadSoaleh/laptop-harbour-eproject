@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -146,6 +147,23 @@ class _LoginPageState extends State<LoginPage> {
     ),
     
     ),
+Container(
+  height: 50,
+  width: 600, 
+   margin: EdgeInsets.fromLTRB(0,16,0,0),// Set the width here
+  child: 
+     ElevatedButton(
+      
+      onPressed: () {
+        // Button action
+      },
+      style: ElevatedButton.styleFrom(
+  foregroundColor: Colors.black, backgroundColor: Colors.orange,
+  ),
+      child: Text("LOG IN"),
+    ),
+  
+),
     ]
   ),
               ],
