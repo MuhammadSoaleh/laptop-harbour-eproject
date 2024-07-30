@@ -18,9 +18,8 @@ async {
 return downloadUrl;
 }
 Future<String>saveData(
-  {
-    required String name,
-    required String fname,
+  { 
+ 
     required String email,
     required String password,
     required Uint8List file,
@@ -30,9 +29,9 @@ async
 {
   String resp="error";
   try {
-    if (name.isNotEmpty || fname.isNotEmpty || email.isNotEmpty || password.isNotEmpty) {
+    if (email.isNotEmpty || password.isNotEmpty) {
       String imgUrl = await uploadImageToStorage("profileImage", file);
-   await _firebaseFirestore.collection("UserProfile").add({'name':name,'fathername':fname,'email':email,'password':password,'ImgLink':imgUrl});
+   await _firebaseFirestore.collection("UserProfile").add({'email':email,'password':password,'ImgLink':imgUrl});
    resp="Success";
     } 
   } catch (err) {
