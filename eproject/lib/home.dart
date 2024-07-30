@@ -11,6 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController emailCont=TextEditingController();
+  final TextEditingController passwordCont=TextEditingController();
   Uint8List? _image;
 
   Future<void> selectImage() async {
@@ -107,8 +109,10 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               SizedBox(height: 25, width: 50,),
           TextField(
+            controller: emailCont,
       decoration: InputDecoration(
-        hintText: "Enter Name",
+        hintText: "Enter Email",
+        //  obscuretext: false,
         contentPadding: EdgeInsets.all(10),
         fillColor: Colors.white, // Set the background color here
       filled: true, 
@@ -129,8 +133,10 @@ class _LoginPageState extends State<LoginPage> {
 
          SizedBox(height: 25, width: 50,),
           TextField(
+            controller: passwordCont,
       decoration: InputDecoration(
-        hintText: "Enter father Name",
+        hintText: "Enter Password",
+        //  obscuretext: true,
         contentPadding: EdgeInsets.all(10),
         fillColor: Colors.white, // Set the background color here
       filled: true, 
@@ -164,6 +170,24 @@ Container(
     ),
   
 ),
+Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Not Registered ? ",
+                style: TextStyle(color: Colors.white),
+              ),
+              GestureDetector(
+                // onTap: (){},
+                child: Text(
+                  " Registered Now ",
+                  style: TextStyle(
+                      color: Colors.orange, fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          )
+
     ]
   ),
               ],
