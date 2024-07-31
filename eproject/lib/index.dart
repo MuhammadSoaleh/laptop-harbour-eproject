@@ -1,8 +1,12 @@
+import 'package:eproject/authservice.dart';
 import 'package:flutter/material.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
-
+void logout() {
+    final _auth = AuthServices();
+    _auth.signOut();
+  }
   @override
   State<home> createState() => _homeState();
 }
