@@ -53,42 +53,46 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset(
-              "assets/fdaf1026bbf9608a68a0fdc8118affee.jpg",
-              fit: BoxFit.cover,
-            ),
+            child: 
+            // Image.asset(
+            //   "assets/fdaf1026bbf9608a68a0fdc8118affee.jpg",
+            //   fit: BoxFit.cover,
+            // ),
+            Image.network("https://images.pexels.com/photos/2528116/pexels-photo-2528116.jpeg?auto=compress&cs=tinysrgb&w=600",
+            fit: BoxFit.cover,
+            )
           ),
           Opacity(opacity: 0.5),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 20),
+                SizedBox(height: 10),
                 Image.asset(
                   "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png",
                   height: 300,
                   width: 300,
                 ),
-                Text(
-                  "LOG IN",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    shadows: [
-                      Shadow(
-                        blurRadius: 10.0,
-                        color: Colors.black.withOpacity(0.5),
-                        offset: Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                ),
+                // Text(
+                //   "LOG IN",
+                //   style: TextStyle(
+                //     fontSize: 24,
+                //     fontWeight: FontWeight.bold,
+                //     color: Colors.white,
+                //     shadows: [
+                //       Shadow(
+                //         blurRadius: 10.0,
+                //         color: Colors.black.withOpacity(0.5),
+                //         offset: Offset(0, 2),
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 Column(
                   children: [
                     SizedBox(height: 25, width: 50),
                      //email textfield
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           MyTextField(
             hintText: "Enter Your Email",
             obscuretext: false,
@@ -96,7 +100,7 @@ class LoginPage extends StatelessWidget {
           ),
                     SizedBox(height: 25, width: 50),
                               //pass textfield
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           MyTextField(
             hintText: "Enter Your Password",
             obscuretext: true,

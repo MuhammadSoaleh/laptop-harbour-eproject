@@ -9,8 +9,8 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return                     Container(
                       height: 50,
-                      width: 600,
-                      margin: EdgeInsets.fromLTRB(0, 16, 0, 0),
+                      width: 105,
+                      margin: EdgeInsets.fromLTRB(0, 16, 0, 16),
                       child: ElevatedButton(
                         onPressed: ontap,
                         style: ElevatedButton.styleFrom(
