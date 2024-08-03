@@ -52,7 +52,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCsEDdChA_MORzOY5Akw6ZEE9rhTRz9izM',
-    appId: '1:100158083172:android:a93bad65e57be150b74f71',
+    appId: '1:100158083172:android:cd21c70e8ca4580fb74f71',
     messagingSenderId: '100158083172',
     projectId: 'laptopharbour-15ceb',
     storageBucket: 'laptopharbour-15ceb.appspot.com',
@@ -64,6 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '100158083172',
     projectId: 'laptopharbour-15ceb',
     storageBucket: 'laptopharbour-15ceb.appspot.com',
+    iosClientId: '100158083172-lh42q9kn8kj34rcsf31j5g9l52sathci.apps.googleusercontent.com',
     iosBundleId: 'com.example.eproject',
   );
 
@@ -73,6 +74,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '100158083172',
     projectId: 'laptopharbour-15ceb',
     storageBucket: 'laptopharbour-15ceb.appspot.com',
+    iosClientId: '100158083172-lh42q9kn8kj34rcsf31j5g9l52sathci.apps.googleusercontent.com',
     iosBundleId: 'com.example.eproject',
   );
 

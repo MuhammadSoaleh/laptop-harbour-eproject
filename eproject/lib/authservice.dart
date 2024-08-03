@@ -30,5 +30,7 @@ class AuthServices {
   Future<void> signOut() async {
     return await auth.signOut();
   }
+
+  void signupWithEmailPassword(String text, String text2) {}
   //errors
 }

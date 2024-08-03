@@ -1,17 +1,16 @@
 import 'package:eproject/authservice.dart';
 import 'package:flutter/material.dart';
 
-class home extends StatefulWidget {
-  const home({super.key});
-void logout() {
+import 'package:flutter/material.dart';
+
+
+class Homepage extends StatelessWidget {
+  const Homepage({Key? key}) : super(key: key);
+  void logout() {
     final _auth = AuthServices();
     _auth.signOut();
   }
-  @override
-  State<home> createState() => _homeState();
-}
 
-class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +37,12 @@ Icon(
      ],
       ),
       ),
+      body:Column(
+       
+      children: [
+         IconButton(onPressed: logout, icon: Icon(Icons.logout))
+      ],
+      )
     )
     ;
    }
