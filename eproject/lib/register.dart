@@ -32,7 +32,7 @@ class RegisterPage extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            "LOG IN",
+            "REGISTER",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class RegisterPage extends StatelessWidget {
               children: [
                 SizedBox(height: 20),
                 Image.asset(
-                  "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png",
+                  "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png.png",
                   height: 250,
                   width: 300,
                 ),
