@@ -51,13 +51,11 @@ class RegisterPage extends StatelessWidget {
         foregroundColor: Colors.black,
       ),
       body: Stack(
-        children: [
+        children: [Opacity(opacity: 0.5),
           Positioned.fill(
             child:
-            //  Image.asset(
-            //   "assets/fdaf1026bbf9608a68a0fdc8118affee.jpg",
-            //   fit: BoxFit.cover,
-            // ),
+           
+            
             Image.network("https://cdn.pixabay.com/photo/2016/11/07/10/14/laptop-1805315_640.jpg",
             fit: BoxFit.cover,),
           ),
