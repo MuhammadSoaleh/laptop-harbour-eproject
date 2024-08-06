@@ -58,7 +58,7 @@ class RegisterPage extends StatelessWidget {
             //   "assets/fdaf1026bbf9608a68a0fdc8118affee.jpg",
             //   fit: BoxFit.cover,
             // ),
-            Image.network("https://images.pexels.com/photos/2528116/pexels-photo-2528116.jpeg?auto=compress&cs=tinysrgb&w=600",
+            Image.network("https://cdn.pixabay.com/photo/2016/11/07/10/14/laptop-1805315_640.jpg",
             fit: BoxFit.cover,),
           ),
           Opacity(opacity: 0.5),
