@@ -1,7 +1,7 @@
 import 'dart:js_interop';
 
 import 'package:eproject/LoginPage.dart';
-import 'package:eproject/index.dart';
+import 'package:eproject/contactus.dart';
 import 'package:eproject/login_or_register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,7 +20,7 @@ class AuthGate extends StatelessWidget {
           builder: (context, snapshot) {
             //user is logged in
             if (snapshot.hasData) {
-              return const Homepage();
+              return  Contactuspage();
             }
             // user is not logged in
             else {
