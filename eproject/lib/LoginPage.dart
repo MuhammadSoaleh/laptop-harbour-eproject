@@ -106,7 +106,7 @@ class LoginPage extends StatelessWidget {
             obscuretext: true,
             textController: passController,
           ),
-                   MyButton(text: "Login", ontap: () => login(context)),
+                   MyButton(text: "Login", onTap: () => login(context)),
                     Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

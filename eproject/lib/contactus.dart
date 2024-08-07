@@ -2,20 +2,24 @@ import 'package:eproject/authservice.dart';
 import 'package:eproject/my_button.dart';
 import 'package:eproject/my_textfeild.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Contactuspage extends StatelessWidget {
+class ContactUsPage extends StatefulWidget {
+  @override
+  _ContactUsPageState createState() => _ContactUsPageState();
+}
+
+class _ContactUsPageState extends State<ContactUsPage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController messageController = TextEditingController();
-
-  Contactuspage({Key? key}) : super(key: key);
 
   void logout() {
     final _auth = AuthServices();
     _auth.signOut();
   }
 
-  void Submit(BuildContext context) {
+  void submit(BuildContext context) {
     // Implement your registration logic here
   }
 
@@ -28,14 +32,14 @@ class Contactuspage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.orange[200],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(onPressed: logout, icon: Icon(Icons.logout)),
             Image.asset(
               "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png.png",
-              height: 200,
+              height: 150,
               width: 150,
             ),
             Icon(
@@ -52,7 +56,7 @@ class Contactuspage extends StatelessWidget {
             image: NetworkImage("https://cdn.pixabay.com/photo/2021/01/05/16/26/laptop-5891723_640.jpg"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-              Colors.orange.withOpacity(0.8), // 20% opacity
+              Colors.orange.withOpacity(0.8),
               BlendMode.dstATop,
             ),
           ),
@@ -75,127 +79,81 @@ class Contactuspage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Stack(
-                children: [
-                  Center(
-                    child: Column(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 25),
+                    MyTextField(
+                      hintText: "Enter Your Email",
+                      obscuretext: false,
+                      textController: emailController,
+                    ),
+                    SizedBox(height: 25),
+                    MyTextField(
+                      hintText: "Enter Your Name",
+                      obscuretext: false,
+                      textController: nameController,
+                    ),
+                    SizedBox(height: 10),
+                    MyTextField(
+                      hintText: "Type Your Message Here",
+                      obscuretext: false,
+                      textController: messageController,
+                    ),
+                    MyButton(
+                      text: "Submit",
+                      onTap: () {
+                        submit(context);
+                      },
+                    ),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(height: 25),
-                        // Email text field
-                        MyTextField(
-                          hintText: "Enter Your Email",
-                          obscuretext: false,
-                          textController: emailController,
+                        Text(
+                          "Thanks For ",
+                          style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 25),
-                        // Name text field
-                        MyTextField(
-                          hintText: "Enter Your Name",
-                          obscuretext: false,
-                          textController: nameController,
-                        ),
-                        SizedBox(height: 10),
-                        // Message text field
-                        MyTextField(
-                          hintText: "Type Your Message Here",
-                          obscuretext: false,
-                          textController: messageController,
-                        ),
-                        MyButton(text: "Submit", ontap: () {}),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Thanks For ",
-                              style: TextStyle(color: Colors.white),
+                        GestureDetector(
+                          onTap: ontap,
+                          child: Text(
+                            " Remember Us",
+                            style: TextStyle(
+                              color: Colors.orange,
+                              fontWeight: FontWeight.bold,
                             ),
-                            GestureDetector(
-                              onTap: ontap,
-                              child: Text(
-                                " Remember Us",
-                                style: TextStyle(
-                                  color: Colors.orange,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            )
-                          ],
-                        )
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-// Example MyTextField and MyButton widgets
-class MyTextField extends StatelessWidget {
-  final String hintText;
-  final bool obscuretext;
-  final TextEditingController textController;
-
-  MyTextField({
-    required this.hintText,
-    required this.obscuretext,
-    required this.textController,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
-      child: TextField(
-        controller: textController,
-        obscureText: obscuretext,
-        decoration: InputDecoration(
-          hintText: hintText,
-          filled: true,
-          fillColor: Colors.white,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.0),
-            borderSide: BorderSide.none,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.orange[200],
+        selectedItemColor: Colors.orange[600],
+        unselectedItemColor: Colors.black,
+        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: "Chats",
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class MyButton extends StatelessWidget {
-  final String text;
-  final VoidCallback ontap;
-
-  MyButton({required this.text, required this.ontap});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-      child: ElevatedButton(
-        onPressed: ontap,
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: 15.0), backgroundColor: Colors.orange,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0),
-          ), // background color
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group_work),
+            label: "Channels",
           ),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_box),
+            label: "Profile",
+          ),
+        ],
       ),
     );
   }

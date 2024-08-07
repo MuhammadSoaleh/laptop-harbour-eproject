@@ -109,7 +109,7 @@ class RegisterPage extends StatelessWidget {
             obscuretext: true,
             textController: ConfirmpassController,
           ),
-                   MyButton(text: "Register", ontap: () => register(context)),
+                  MyButton(text: "Register", onTap: () => register(context)),
                     Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
