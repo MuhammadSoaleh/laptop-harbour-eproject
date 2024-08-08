@@ -13,7 +13,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.orange[200],
       child: Column(
         children: [
           // logo
