@@ -25,27 +25,17 @@ class _ContactUsPageState extends State<ContactUsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(drawer : MyWidget(),
+    return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.orange[200],
-        
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            
-          // Using the drawer widget here
-            Center(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Image.asset(
-                    "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png.png",
-                    height: 150,
-                    width: 150,
-                    
-                  ),
-                ],
-              ),
+            Image.asset(
+              "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png.png",
+              height: 150, // Adjusted height for better fit in AppBar
+              width: 150, // Adjusted width for better fit in AppBar
             ),
             const Icon(
               Icons.search,
@@ -55,7 +45,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
           ],
         ),
       ),
-       // Ensure you have DrawerWidget implemented properly.
+      drawer: MyWidget(), // Ensure you have DrawerWidget implemented properly.
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -107,12 +97,14 @@ class _ContactUsPageState extends State<ContactUsPage> {
                       obscuretext: false,
                       textController: messageController,
                     ),
+                    const SizedBox(height: 25), // Added some spacing
                     MyButton(
                       text: "Submit",
                       onTap: () {
                         submit(context);
                       },
                     ),
+                    const SizedBox(height: 20), // Added some spacing
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -123,7 +115,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                         GestureDetector(
                           onTap: ontap,
                           child: const Text(
-                            " Remember Us",
+                            " Remembering Us",
                             style: TextStyle(
                               color: Colors.orange,
                               fontWeight: FontWeight.bold,
