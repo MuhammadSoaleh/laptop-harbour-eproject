@@ -25,18 +25,27 @@ class _ContactUsPageState extends State<ContactUsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(drawer : MyWidget(),
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.orange[200],
+        
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-         drawer : MyWidget(), // Using the drawer widget here
-            Image.asset(
-              "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png.png",
-              height: 50,
-              width: 50,
+            
+          // Using the drawer widget here
+            Center(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Image.asset(
+                    "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png.png",
+                    height: 150,
+                    width: 150,
+                    
+                  ),
+                ],
+              ),
             ),
             const Icon(
               Icons.search,
@@ -46,7 +55,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
           ],
         ),
       ),
-      drawer: MyWidget(), // Ensure you have DrawerWidget implemented properly.
+       // Ensure you have DrawerWidget implemented properly.
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
