@@ -1,7 +1,7 @@
 import 'package:eproject/authservice.dart';
 import 'package:eproject/my_button.dart';
 import 'package:eproject/my_textfeild.dart';
-import 'package:eproject/drawer.dart'; // Ensure this is the correct import for MyWidget
+import 'package:eproject/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -34,8 +34,8 @@ class _ContactUsPageState extends State<ContactUsPage> {
           children: [
             Image.asset(
               "assets/WhatsApp_Image_2024-07-26_at_11.12.40_PM-removebg.png.png",
-              height: 150, // Adjusted height for better fit in AppBar
-              width: 150, // Adjusted width for better fit in AppBar
+              height: 150,  // Adjusted height for better fit in AppBar
+              width: 150,   // Adjusted width for better fit in AppBar
             ),
             const Icon(
               Icons.search,
@@ -45,7 +45,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
           ],
         ),
       ),
-      drawer: MyWidget(), // Ensure you have DrawerWidget implemented properly.
+      drawer: MyWidget(), // Ensure MyWidget is implemented correctly as a Drawer.
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -79,32 +79,49 @@ class _ContactUsPageState extends State<ContactUsPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 25),
+                    const SizedBox(height: 10),
                     MyTextField(
                       hintText: "Enter Your Email",
                       obscuretext: false,
                       textController: emailController,
                     ),
-                    const SizedBox(height: 25),
+                    const SizedBox(height: 10),
                     MyTextField(
                       hintText: "Enter Your Name",
                       obscuretext: false,
                       textController: nameController,
                     ),
-                    const SizedBox(height: 10),
-                    MyTextField(
-                      hintText: "Type Your Message Here",
-                      obscuretext: false,
-                      textController: messageController,
+                    const SizedBox(height: 10,width: 5,),
+                    Container(
+                      height: 150,
+                      width: 450, // Increased height for better usability
+                      child: TextField(
+                        controller: messageController,
+                        obscureText: false,
+                        maxLines: 5, // Allows for more lines to be entered
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.orange),
+                          ),
+                          fillColor: Colors.white,
+                          filled: true,
+                          hintText: "Enter Your Message Here",
+                          hintStyle: TextStyle(color: Colors.black),
+                        ),
+                      ),
                     ),
-                    const SizedBox(height: 25), // Added some spacing
+                    const SizedBox(height: 20), // Added some spacing
                     MyButton(
                       text: "Submit",
                       onTap: () {
                         submit(context);
                       },
                     ),
-                    const SizedBox(height: 20), // Added some spacing
+                    const SizedBox(height: 20,), // Added some spacing
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
