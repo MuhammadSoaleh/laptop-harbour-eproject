@@ -16,23 +16,23 @@ class MyTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
         style: TextStyle(
-                      color: Colors.orange, // Set the font color here
+                      color: Colors.black, // Set the font color here
                     ),
           obscureText: obscuretext,
           controller: textController,
           decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(50.0),
-                  borderSide: BorderSide(color: Colors.black
+                  borderSide: BorderSide(color: Colors.white10
                       )),
                 
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.orange)),
+                  borderSide: BorderSide(color: Colors.white)),
               fillColor: Colors.white,
               filled: true,
               
               hintText: hintText,
-              hintStyle: TextStyle(color: Colors.black))),
+              hintStyle: TextStyle(color: const Color.fromARGB(88, 8, 8, 8)))),
     );
   }
 }
